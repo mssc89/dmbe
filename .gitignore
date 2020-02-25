@@ -41,6 +41,7 @@ yarn-error.log
 testem.log
 /typings
 .editorconfig
+/e2e
 
 # System Files
 .DS_Store
