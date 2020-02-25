@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "dmbe": {
@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +128,20 @@
           }
         }
       }
-    }},
-  "defaultProject": "dmbe"
+    }
+  },
+  "defaultProject": "dmbe",
+  "cli": {
+    "analytics": "f7557bfd-9f9d-4215-aef3-27ff8e36c3ce"
+  },
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      },
+      "service": {
+        "spec": false
+      }
+    }
+  }
 }
