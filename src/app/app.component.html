@@ -1,22 +1,20 @@
-<div class="main-container">
-    <div class="alert alert-app-level">
-
+<clr-main-container>
+  <!--<div class="alert alert-app-level">
+      ...
+  </div>-->
+  <clr-header>
+    <div class="branding">
+        <img class="logo" src="assets/logo.png">
     </div>
-    <header class="header header-6">
-
-    </header>
-    <nav class="subnav">
-        <a routerLink="/">Strona główna</a>
-    </nav>
-    <div class="content-container">
-        <div class="content-area">
-
-        </div>
-        <nav class="sidenav">
-
-        </nav>
-    </div>
+  </clr-header>
+  <nav class="subnav" [clr-nav-level]="1">
+    subpages
+  </nav>
+  <div class="content-container">
+      <div class="content-area">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</clr-main-container>
 
 
-  <router-outlet></router-outlet>
-</div>
