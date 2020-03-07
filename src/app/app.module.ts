@@ -12,7 +12,6 @@ import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 import { SidenavComponent } from './parts/sidenav/sidenav.component';
 import { PostComponent } from './parts/post/post.component';
-import { PostsComponent } from './parts/posts/posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     SidenavComponent,
     PostComponent,
-    PostsComponent,
     NotFoundComponent
   ],
   imports: [
