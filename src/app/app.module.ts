@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 import { SidenavComponent } from './parts/sidenav/sidenav.component';
-import { HomeComponent } from './home/home.component';
 import { PostComponent } from './parts/post/post.component';
 import { PostsComponent } from './parts/posts/posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -22,7 +21,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
-    HomeComponent,
     PostComponent,
     PostsComponent,
     NotFoundComponent
