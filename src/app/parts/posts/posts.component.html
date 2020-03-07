@@ -1,0 +1,6 @@
+<div *ngFor="let post of posts">
+  <h1>{{post.title}}</h1>
+  <span class="p7">{{post.createDate.toLocaleString()}}</span>
+  <p>{{post.content | truncate:10}}</p>
+  <hr>
+</div>
