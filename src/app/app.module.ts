@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 import { SidenavComponent } from './parts/sidenav/sidenav.component';
-import { PostComponent } from './parts/post/post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -17,7 +16,6 @@ import { SharedModule } from './shared/shared.module';
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
-    PostComponent,
     NotFoundComponent
   ],
   imports: [

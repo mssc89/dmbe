@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  post: Post = new Post(0,'','',new Date());
+  post: Post = new Post(0, '', '', new Date());
 
   constructor(private api: ApiService, private route: ActivatedRoute) { }
 
