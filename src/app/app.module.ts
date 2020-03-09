@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 import { SidenavComponent } from './parts/sidenav/sidenav.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -15,8 +14,7 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent,
-    NotFoundComponent
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
