@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
+import { BlogComponent } from './blog.component';
 
 const routes: Routes = [
-  { path: '', component: PostsComponent },
-  { path: 'post/:id', component: PostComponent }
+  { path: '', component: BlogComponent, children: [
+    { path: '', component: PostsComponent, data: {animation: 'Posts'} },
+    { path: 'post/:id', component: PostComponent, data: {animation: 'Post'} }
+  ]}
 ];
 
 @NgModule({

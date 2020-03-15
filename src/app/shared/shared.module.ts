@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClarityModule } from '@clr/angular';
 import { TruncateModule } from '@yellowspot/ng-truncate';
 
-
 @NgModule({
   declarations: [],
   imports: [
