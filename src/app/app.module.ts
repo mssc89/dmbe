@@ -29,7 +29,12 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        whitelistedDomains: ['dosmasters.net', 'localhost:3000']
+        whitelistedDomains: [
+          'localhost:3000'
+        ],
+        blacklistedRoutes: [
+          'localhost:3000/auth/',
+        ]
       }
     })
   ],

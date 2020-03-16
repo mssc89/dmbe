@@ -5,15 +5,10 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { Post } from '../models/post';
 import { Response } from '../models/response';
 
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type' : 'application/json'})
-};
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class PostsService {
 
   api = 'http://localhost:3000/api/posts';
 

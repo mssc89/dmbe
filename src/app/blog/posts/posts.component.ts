@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { PostsService } from 'src/app/services/posts.service';
 import { Post } from 'src/app/models/post';
 
 @Component({
@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
 
-  constructor(private api: ApiService) {
+  constructor(private api: PostsService) {
   }
 
   ngOnInit(): void {
