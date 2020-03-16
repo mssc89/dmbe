@@ -12,7 +12,8 @@ export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
     this.api.getPosts().subscribe(res => {

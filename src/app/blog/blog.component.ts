@@ -1,23 +1,16 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Animations } from '../animations/animations';
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
-  animations: [
-    Animations
-  ]
+  styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
 }

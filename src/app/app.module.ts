@@ -14,7 +14,7 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

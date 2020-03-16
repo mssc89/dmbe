@@ -7,8 +7,8 @@ import { BlogComponent } from './blog.component';
 
 const routes: Routes = [
   { path: '', component: BlogComponent, children: [
-    { path: '', component: PostsComponent, data: {animation: 'Posts'} },
-    { path: 'post/:id', component: PostComponent, data: {animation: 'Post'} }
+    { path: '', component: PostsComponent },
+    { path: 'post/:id', component: PostComponent }
   ]}
 ];
 

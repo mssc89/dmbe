@@ -12,7 +12,7 @@ export class PostComponent implements OnInit {
 
   post: Post = new Post(0, '', '', new Date());
 
-  constructor(private api: ApiService, private route: ActivatedRoute) { }
+  constructor(private api: ApiService, private route: ActivatedRoute){ }
 
   ngOnInit(): void {
     this.api.getPost(this.route.snapshot.params.id).subscribe(res => {

@@ -1,8 +1,3 @@
 <div *ngFor="let post of posts">
-  <h1>{{post.title}}</h1>
-  <span class="p7">{{post.createDate.toLocaleString()}}</span>
-  <p>{{post.content | words:10}}</p>
-  <br>
-  <button class="btn btn-primary" [routerLink]="'post/'+post.id">Czytaj dalej <clr-icon shape="resize"></clr-icon></button>
-  <hr>
+ <app-brief [post]='post'></app-brief>
 </div>
