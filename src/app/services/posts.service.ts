@@ -5,6 +5,10 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { Post } from '../models/post';
 import { Response } from '../models/response';
 
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,16 +18,16 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
+  getUrl(id?: string): string {
+    return this.api + '/' + id;
+  }
+
   // api error handler
   errorHandler<T>(action: string, result?: T) {
     return (error: any): Observable<T> => {
       console.error(action, error);
       return of(result as T);
     };
-  }
-
-  getUrl(id?: string): string {
-    return this.api + '/' + id;
   }
 
   getPosts(): Observable<Post[]> {
