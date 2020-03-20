@@ -4,6 +4,11 @@
   background:none;
 }
 
+.login{
+  background: none;
+  min-height: 0;
+}
+
 .login::after{
   display:none;
 }

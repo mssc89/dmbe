@@ -1,10 +1,32 @@
 <clr-modal [(clrModalOpen)]="status">
-  <h3 class="modal-title">I have a nice title</h3>
+  <h3 class="modal-title">Login</h3>
   <div class="modal-body">
-      <p>But not much to say...</p>
+    <div class="login-wrapper">
+      <form class="login">
+        <section class="title">
+          <h3 class="welcome">Welcome back to</h3>
+          DosMasters
+        </section>
+        <div class="login-group">
+          <clr-input-container>
+            <label class="clr-sr-only">Username</label>
+            <input type="text" name="username" clrInput placeholder="Username"/>
+          </clr-input-container>
+          <clr-password-container>
+            <label class="clr-sr-only">Password</label>
+            <input type="password" name="password" clrPassword placeholder="Password"/>
+          </clr-password-container>
+          <div class="error active">
+            Invalid user name or password
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <a href="javascript://" class="signup">Or register</a>
+        </div>
+      </form>
+    </div>
   </div>
   <div class="modal-footer">
-      <button type="button" class="btn btn-outline" >Cancel</button>
-      <button type="button" class="btn btn-primary" >Ok</button>
+      <button type="button" class="btn btn-outline">Cancel</button>
+      <button type="button" class="btn btn-primary">Ok</button>
   </div>
 </clr-modal>
