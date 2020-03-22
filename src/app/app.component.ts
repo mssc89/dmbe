@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private modal: ModalService){}
 
   mod(){
-    this.modal.toggle('login', true);
+    this.modal.toggle('register', true);
   }
 
 }
