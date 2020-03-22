@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import { ClrWizard } from '@clr/angular';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-register',
@@ -9,16 +10,14 @@ import { ClrWizard } from '@clr/angular';
 })
 export class RegisterComponent implements OnInit {
 
+  status = false; // whether modal is open or not
+
   @ViewChild('wizard') wizard: ClrWizard;
-  @ViewChild("number") numberFi: any;
 
-  model = {
-      name: "",
-      favorite: "",
-      number: ""
+  formModel = {
+    user: new User(null, '', '', '', null),
+    password: ''
   };
-
-  status = false;
 
   constructor(private modal: ModalService) { }
 

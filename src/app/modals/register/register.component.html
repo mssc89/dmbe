@@ -6,24 +6,24 @@
   <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
   <clr-wizard-button [type]="'finish'">Done</clr-wizard-button>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="name.pristine || !formPageOne.valid">
-      <ng-template clrPageTitle>Basic info</ng-template> <!-- mandatory -->
+  <clr-wizard-page [clrWizardPageNextDisabled]="username.pristine || !formPageOne.valid">
+      <ng-template clrPageTitle>Basic info</ng-template>
 
       <form clrForm #formPageOne="ngForm" clrLayout="vertical">
         <clr-input-container>
           <label>Username</label>
-          <input clrInput required [(ngModel)]="model.name" name="name" #name="ngModel" />
+          <input clrInput required [(ngModel)]="formModel.user.username" name='username' #username="ngModel"/>
           <clr-control-error>This field is required!</clr-control-error>
         </clr-input-container>
 
         <clr-input-container>
           <label>Password</label>
-          <input clrInput [(ngModel)]="model.favorite" name="favorite" />
+          <input clrInput required [(ngModel)]="formModel.password" name='password' #password="ngModel"/>
         </clr-input-container>
       </form>
   </clr-wizard-page>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="number.pristine || !formPageTwo.valid">
+  <clr-wizard-page>
       <ng-template clrPageTitle>Optional info</ng-template>
 
       <form #formPageTwo="ngForm" clrLayout="horizontal">
@@ -31,13 +31,13 @@
 
         <clr-input-container>
           <label>Your name</label>
-          <input clrInput type="number" [(ngModel)]="model.number" name="number" #number="ngModel" />
+          <input clrInput [(ngModel)]="formModel.user.name"/>
           <clr-control-helper>If you prefer to have it displayed over username</clr-control-helper>
         </clr-input-container>
 
         <clr-input-container>
           <label>Email address</label>
-          <input clrInput [(ngModel)]="model.name" name="name" #name="ngModel" />
+          <input clrInput type='email' [(ngModel)]="formModel.user.email"/>
           <clr-control-helper>Don't worry, we won't send you spam (propably). Required for password reset.</clr-control-helper>
         </clr-input-container>
 
@@ -45,7 +45,7 @@
       </form>
   </clr-wizard-page>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid || !formPageTwo.valid">
+  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid">
       <ng-template clrPageTitle>Title for page 3</ng-template> <!-- mandatory -->
       <ng-template clrPageNavTitle>
           <span *ngIf="formPageOne.valid && formPageTwo.valid">
