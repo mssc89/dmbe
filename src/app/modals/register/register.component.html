@@ -45,16 +45,8 @@
       </form>
   </clr-wizard-page>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid">
-      <ng-template clrPageTitle>Title for page 3</ng-template> <!-- mandatory -->
-      <ng-template clrPageNavTitle>
-          <span *ngIf="formPageOne.valid && formPageTwo.valid">
-              Ready to go!
-          </span>
-          <span *ngIf="!formPageOne.valid || !formPageTwo.valid">
-              Not ready yet
-          </span>
-      </ng-template> <!-- optional -->
+  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid" clrWizardSize="md">
+      <ng-template clrPageTitle>Summary</ng-template>
 
       <div *ngIf="formPageOne.valid && formPageTwo.valid">
           <p>Congratulations! You are done with this wizard.</p>
@@ -62,15 +54,15 @@
           <section>
             <p>
               <label>Your name:</label>
-              <span>{{ this.model.name }}</span>
+              <span></span>
             </p>
             <p>
               <label>Your favorite food:</label>
-              <span>{{ this.model.favorite }}</span>
+              <span></span>
             </p>
             <p>
               <label>Your lucky number:</label>
-              <span>{{ this.model.number }}</span>
+              <span></span>
             </p>
           </section>
       </div>
