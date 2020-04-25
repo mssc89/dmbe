@@ -4,7 +4,7 @@
   <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
   <clr-wizard-button [type]="'previous'">Previous</clr-wizard-button>
   <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-  <clr-wizard-button [type]="'finish'">Done</clr-wizard-button>
+  <clr-wizard-button (click)="register()" [type]="'finish'">Done</clr-wizard-button>
 
   <clr-wizard-page [clrWizardPageNextDisabled]="username.pristine || !formPageOne.valid">
       <ng-template clrPageTitle>Basic info</ng-template>

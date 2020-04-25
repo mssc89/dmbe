@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Response } from '../models/response';
+import { User } from '../models/user';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -34,8 +35,8 @@ export class AuthService {
   }
 
   // login function - get jwt token from backend
-  login(username: string, password: string): Observable<string> {
-    return this.http.post<Response>(this.api + '/login', {username, password}, httpOptions).pipe(
+  login(user: User): Observable<string> {
+    return this.http.post<Response>(this.api + '/login', { user }, httpOptions).pipe(
       map(res => {
         const token = res.data;
         return token;
@@ -44,8 +45,8 @@ export class AuthService {
     );
   }
 
-  register(username: string, password: string): Observable<string> {
-    return this.http.post<Response>(this.api + '/register', {username, password}, httpOptions).pipe(
+  register(user: User): Observable<string> {
+    return this.http.post<Response>(this.api + '/register', { user }, httpOptions).pipe(
       map(res => {
         const token = res.data;
         return token;
