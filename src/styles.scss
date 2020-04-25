@@ -11,3 +11,21 @@ my-app,
 router-outlet {
   display: block;
 }
+
+/* https://github.com/vmware/clarity/issues/2482, wymaga dalszych poprawek*/
+@media screen and (max-width: 768px) {
+  .clr-wizard {
+    .modal-dialog {
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    .modal-content {
+      min-width: 100%;
+    }
+
+    .modal-nav.clr-wizard-stepnav-wrapper {
+      display: none;
+    }
+  }
+}

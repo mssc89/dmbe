@@ -1,4 +1,4 @@
-<clr-wizard #wizard [(clrWizardOpen)]="status">
+<clr-wizard #wizard [(clrWizardOpen)]="status" clrWizardSize="md">
   <clr-wizard-title>Register</clr-wizard-title>
 
   <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
@@ -16,10 +16,14 @@
           <clr-control-error>This field is required!</clr-control-error>
         </clr-input-container>
 
-        <clr-input-container>
+        <clr-password-container>
           <label>Password</label>
-          <input clrInput required [(ngModel)]="formModel.password" name='password' #password="ngModel"/>
-        </clr-input-container>
+          <input clrPassword required [(ngModel)]="formModel.password" name='password' #password="ngModel" type="password" minlength="8"/>
+          <clr-control-helper>Must contain at least 8 characters</clr-control-helper>
+          <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+          <clr-control-error *clrIfError="'minlength'">It must be at least 8 characters!</clr-control-error>
+        </clr-password-container>
+
       </form>
   </clr-wizard-page>
 
@@ -31,13 +35,13 @@
 
         <clr-input-container>
           <label>Your name</label>
-          <input clrInput [(ngModel)]="formModel.user.name"/>
+          <input clrInput [(ngModel)]="formModel.user.name" name="user" #user="ngModel"/>
           <clr-control-helper>If you prefer to have it displayed over username</clr-control-helper>
         </clr-input-container>
 
         <clr-input-container>
           <label>Email address</label>
-          <input clrInput type='email' [(ngModel)]="formModel.user.email"/>
+          <input clrInput type='email' [(ngModel)]="formModel.user.email" name="email" #email="ngModel"/>
           <clr-control-helper>Don't worry, we won't send you spam (propably). Required for password reset.</clr-control-helper>
         </clr-input-container>
 
@@ -45,24 +49,24 @@
       </form>
   </clr-wizard-page>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid" clrWizardSize="md">
+  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.valid">
       <ng-template clrPageTitle>Summary</ng-template>
 
       <div *ngIf="formPageOne.valid && formPageTwo.valid">
-          <p>Congratulations! You are done with this wizard.</p>
-          <label>Your information</label>
+          <p>Congratulations! You are now ready to register!</p>
+          <label>Take a look at your information and go back if you want to change anything.</label>
           <section>
             <p>
+              <label>Your username:</label>
+              <span>{{ formModel.user.username }}</span>
+            </p>
+            <p>
               <label>Your name:</label>
-              <span></span>
+              <span>{{ formModel.user.name }}</span>
             </p>
             <p>
-              <label>Your favorite food:</label>
-              <span></span>
-            </p>
-            <p>
-              <label>Your lucky number:</label>
-              <span></span>
+              <label>Your email address:</label>
+              <span>{{ formModel.user.email }}</span>
             </p>
           </section>
       </div>
