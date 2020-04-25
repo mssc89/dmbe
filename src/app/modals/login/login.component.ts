@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,25 @@ export class LoginComponent implements OnInit {
 
   status = false;
 
-  constructor(private modal: ModalService) { }
+  formModel = {
+    user: new User(null, '', '', '', '', null),
+  };
+
+  constructor(private modal: ModalService, private api: AuthService) { }
 
   ngOnInit(): void {
     this.modal.toggler.subscribe(call => {
       if (call.id == 'login') {
         this.status = call.status;
       }
+    });
+  }
+
+  login() {
+    this.api.login(this.formModel.user).subscribe(res => {
+
+    }, err => {
+      console.log(err);
     });
   }
 

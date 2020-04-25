@@ -16,11 +16,10 @@ export class RegisterComponent implements OnInit {
   @ViewChild('wizard') wizard: ClrWizard;
 
   formModel = {
-    user: new User(null, '', '', '', null),
-    password: ''
+    user: new User(null, '', '', '', '', null),
   };
 
-  constructor(private modal: ModalService, private auth: AuthService) { }
+  constructor(private modal: ModalService, private api: AuthService) { }
 
   ngOnInit(): void {
     this.modal.toggler.subscribe(call => {
@@ -30,8 +29,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  register(){
-    this.auth.register(this.user);
+  register(): void {
+    this.api.register(this.formModel.user).subscribe(res => {
+
+    }, err => {
+      console.log(err);
+    });
   }
 
 }

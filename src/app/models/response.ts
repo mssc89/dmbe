@@ -1,4 +1,4 @@
 export class Response {
-  status: string;
+  status: any;
   data: any;
 }

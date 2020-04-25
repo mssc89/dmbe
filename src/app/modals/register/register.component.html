@@ -18,7 +18,7 @@
 
         <clr-password-container>
           <label>Password</label>
-          <input clrPassword required [(ngModel)]="formModel.password" name='password' #password="ngModel" type="password" minlength="8"/>
+          <input clrPassword required [(ngModel)]="formModel.user.password" name='password' #password="ngModel" type="password" minlength="8"/>
           <clr-control-helper>Must contain at least 8 characters</clr-control-helper>
           <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
           <clr-control-error *clrIfError="'minlength'">It must be at least 8 characters!</clr-control-error>

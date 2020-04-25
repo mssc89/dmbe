@@ -38,18 +38,21 @@ export class AuthService {
   login(user: User): Observable<string> {
     return this.http.post<Response>(this.api + '/login', { user }, httpOptions).pipe(
       map(res => {
-        const token = res.data;
-        return token;
+        const status = res.status;
+        this.setToken(res.data);
+        return status;
       }),
       catchError(this.errorHandler('login'))
     );
   }
 
+  // register function - sent user object to backend and expect status
   register(user: User): Observable<string> {
     return this.http.post<Response>(this.api + '/register', { user }, httpOptions).pipe(
       map(res => {
-        const token = res.data;
-        return token;
+        const status = res.status;
+        this.setToken(res.data);
+        return status;
       }),
       catchError(this.errorHandler('register'))
     );

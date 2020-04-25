@@ -10,16 +10,16 @@
         <div class="login-group">
           <clr-input-container>
             <label class="clr-sr-only">Username</label>
-            <input type="text" name="username" clrInput placeholder="Username"/>
+            <input required type="text" name="username" clrInput placeholder="Username" [(ngModel)]="formModel.user.username" #username="ngModel"/>
           </clr-input-container>
           <clr-password-container>
             <label class="clr-sr-only">Password</label>
-            <input type="password" name="password" clrPassword placeholder="Password"/>
+            <input required type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="formModel.user.password" #password="ngModel"/>
           </clr-password-container>
           <div class="error active">
             Invalid user name and/or password
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
           <a href="javascript://" class="signup">Or register</a>
         </div>
       </form>
