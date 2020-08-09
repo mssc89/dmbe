@@ -9,6 +9,14 @@
     <div class="branding">
         <img class="logo" src="assets/dmlogoanimated.gif">
     </div>
+    <div class="header-actions">
+      <a href="javascript://" (click)="login()" class="nav-link nav-text">
+        Login
+      </a>
+      <a href="javascript://" (click)="register()" class="nav-link nav-text">
+        Register
+      </a>
+    </div>
   </clr-header>
   <nav class="subnav" [clr-nav-level]="1">
     <ul class="nav">
@@ -23,7 +31,6 @@
   <div class="content-container">
     <div class="content-area">
         <router-outlet></router-outlet>
-        <button (click)='mod()'></button>
     </div>
   </div>
 </clr-main-container>
