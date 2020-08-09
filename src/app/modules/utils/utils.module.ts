@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UtilsRoutingModule } from './utils-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
