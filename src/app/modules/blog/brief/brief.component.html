@@ -1,6 +1,14 @@
-<h1>{{post.title}}</h1>
-<span class="p7">{{post.createDate.toLocaleString()}}</span>
-<p>{{post.content | words:10}}</p>
-<br>
-<button class="btn btn-primary" [routerLink]="'post/'+post.id">Czytaj dalej <clr-icon shape="resize"></clr-icon></button>
-<hr>
+<div class="card clickable" [routerLink]="'post/'+post.id">
+  <div class="card-img">
+    <img src="...">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">{{ post.title }}</h4>
+    <p class="card-text">{{ post.createDate.toLocaleString() }}</p>
+  </div>
+  <div class="card-block">
+    <p class="card-text">
+      {{ post.content | words:30 }}
+    </p>
+  </div>
+</div>

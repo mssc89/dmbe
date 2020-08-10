@@ -1,3 +1,5 @@
-<div *ngFor="let post of posts">
- <app-brief [post]='post'></app-brief>
+<div class="card-columns">
+  <div class="card">
+  </div>
+  <app-brief *ngFor="let post of posts" [post]='post'></app-brief>
 </div>
