@@ -6,12 +6,18 @@
       ...
   </div>-->
   <clr-header>
-    <div class="branding">
+    <div class="branding" *ngIf='screenSize > 600'>
       <a routerLink="/" href="javascript://">
         <img class="logo" src="assets/dmlogoanimated.gif">
       </a>
     </div>
-    <div class="header-actions">
+    <div class="branding" *ngIf='screenSize <= 600'>
+      <a routerLink="/" href="javascript://" class="nav-link">
+          <clr-icon shape="vm-bug"></clr-icon>
+          <span class="title">DosMasters</span>
+      </a>
+    </div>
+    <div class="header-actions" *ngIf='screenSize > 768'>
       <clr-dropdown>
         <button class="nav-icon" clrDropdownTrigger aria-label="toggle translation menu">
             <clr-icon shape="language"></clr-icon>
@@ -21,12 +27,20 @@
             <a *ngFor="let language of languages" href="..." clrDropdownItem>{{ language.name }}</a>
         </clr-dropdown-menu>
       </clr-dropdown>
-      <a href="javascript://" (click)="login()" class="nav-link nav-text">
-        Login
-      </a>
-      <a href="javascript://" (click)="register()" class="nav-link nav-text">
-        Register
-      </a>
+      <a href="javascript://" (click)="login()" class="nav-link nav-text">Login</a>
+      <a href="javascript://" (click)="register()" class="nav-link nav-text">Register</a>
+    </div>
+    <div class="header-actions" *ngIf='screenSize <= 768'>
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger aria-label="toggle translation menu">
+            <clr-icon shape="gear"></clr-icon>
+            <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="javascript://" (click)="login()" class="nav-link nav-text">Login</a>
+          <a href="javascript://" (click)="register()" class="nav-link nav-text">Register</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
     </div>
   </clr-header>
   <nav class="subnav" [clr-nav-level]="1">

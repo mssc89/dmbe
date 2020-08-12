@@ -2,9 +2,8 @@
   height: inherit;
   padding:10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 600px) {
   .logo{
-    width:100%;
     display:inherit !important;
   }
   .branding{
