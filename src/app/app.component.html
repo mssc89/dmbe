@@ -37,8 +37,8 @@
             <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-          <a href="javascript://" (click)="login()" class="nav-link nav-text">Login</a>
-          <a href="javascript://" (click)="register()" class="nav-link nav-text">Register</a>
+          <a href="javascript://" (click)="login()" class="nav-link nav-text">{{ 'AppModule.Navbar.login' | translate }}</a>
+          <a href="javascript://" (click)="register()" class="nav-link nav-text">{{ 'AppModule.Navbar.register' | translate }}</a>
         </clr-dropdown-menu>
       </clr-dropdown>
     </div>
