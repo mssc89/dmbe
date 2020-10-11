@@ -25,6 +25,11 @@ export class AppComponent {
     });
   }
 
+  changeLanguage(lang: string){
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+  }
+
   login(){
     this.modal.toggle('login', true);
   }

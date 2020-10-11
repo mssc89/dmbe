@@ -36,7 +36,8 @@ export function createTranslateLoader(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     ClarityModule,
-    TruncateModule
+    TruncateModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

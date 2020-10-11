@@ -1,0 +1,8 @@
+{
+	"AppModule": {
+		"Navbar": {
+      "login": "Zaloguj",
+      "register": "Zarejestruj"
+    }
+  }
+}
