@@ -2,7 +2,9 @@
 	"AppModule": {
 		"Navbar": {
       "login": "Zaloguj",
-      "register": "Zarejestruj"
+      "register": "Zarejestruj",
+      "home": "Home",
+      "account": "Konto"
     }
   }
 }
