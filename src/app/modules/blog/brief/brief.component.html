@@ -1,5 +1,5 @@
 <div class="card clickable" [routerLink]="'post/'+post.id">
-  <div class="card-img">
+  <div *ngIf="post.image" class="card-img">
     <img src="...">
   </div>
   <div class="card-block">

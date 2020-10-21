@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   status = false;
 
   formModel = {
-    user: new User(null, '', '', '', '', null),
+    user: new User(),
   };
 
   constructor(private modal: ModalService, private api: AuthService) { }

@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   @ViewChild('wizard') wizard: ClrWizard;
 
   formModel = {
-    user: new User(null, '', '', '', '', null),
+    user: new User(),
   };
 
   constructor(private modal: ModalService, private api: AuthService) { }
