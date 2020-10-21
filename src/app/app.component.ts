@@ -13,13 +13,19 @@ export class AppComponent {
   screenSize;
 
   languages = [
-    { 'name':'English', 'abb':'en' },
-    { 'name':'Polish', 'abb':'pl' }
+    { name: 'English', abb: 'en' },
+    { name: 'Polski', abb: 'pl' }
   ]; // test translation list, it should be received from the API
 
   constructor(private modal: ModalService, public translate: TranslateService, private size: SizeService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+    if (localStorage.getItem('lang') === null) {
+      const browserLang = translate.getBrowserLang();
+      translate.use(browserLang.match(/en|de|es|pl|ru|zh|fr|hi|ja|pt|it/) ? browserLang : 'en');
+    }
+    else{
+      translate.use(localStorage.getItem('lang'));
+    }
+
     this.size.sizeChange().subscribe(screenSize => {
       this.screenSize = screenSize;
     });
