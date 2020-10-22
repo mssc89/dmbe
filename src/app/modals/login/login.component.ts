@@ -11,6 +11,7 @@ import { User } from 'src/app/models/user';
 export class LoginComponent implements OnInit {
 
   status = false;
+  error = false; //login error, bad password for example
 
   formModel = {
     user: new User(),
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
+  logi() {
     this.api.login(this.formModel.user).subscribe(res => {
 
     }, err => {

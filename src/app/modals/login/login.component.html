@@ -2,7 +2,7 @@
   <h3 class="modal-title">Login</h3>
   <div class="modal-body">
     <div class="login-wrapper">
-      <form class="login">
+      <form class="login" #login="ngForm">
         <section class="title">
           <h3 class="welcome">Welcome back to</h3>
           DosMasters
@@ -16,10 +16,10 @@
             <label class="clr-sr-only">Password</label>
             <input required type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="formModel.user.password" #password="ngModel"/>
           </clr-password-container>
-          <div class="error active">
+          <div *ngIf='error' class="error active">
             Invalid user name and/or password
           </div>
-          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+          <button type="submit" class="btn btn-primary loginButton" (click)="logi()" [disabled]='login.invalid'>Login</button>
           <a href="javascript://" class="signup">Or register</a>
         </div>
       </form>

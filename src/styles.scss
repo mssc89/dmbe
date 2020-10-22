@@ -12,6 +12,14 @@ router-outlet {
   display: block;
 }
 
+.clr-input-wrapper {
+  max-width: none;
+}
+
+.clr-validate-icon {
+  display: none !important;
+}
+
 /* https://github.com/vmware/clarity/issues/2482, wymaga dalszych poprawek*/
 @media screen and (max-width: 768px) {
   .clr-wizard {
