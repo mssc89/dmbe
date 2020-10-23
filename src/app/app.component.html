@@ -27,18 +27,18 @@
             <a *ngFor="let language of languages" (click)="changeLanguage(language.abb)" clrDropdownItem>{{ language.name }}</a>
         </clr-dropdown-menu>
       </clr-dropdown>
-      <a href="javascript://" (click)="login()" class="nav-link nav-text">{{ 'AppModule.Navbar.login' | translate }}</a>
-      <a href="javascript://" (click)="register()" class="nav-link nav-text">{{ 'AppModule.Navbar.register' | translate }}</a>
+      <a *ngIf='!auth.isLoggedIn()' href="javascript://" (click)="login()" class="nav-link nav-text">{{ 'AppModule.Navbar.login' | translate }}</a>
+      <a *ngIf='!auth.isLoggedIn()' href="javascript://" (click)="register()" class="nav-link nav-text">{{ 'AppModule.Navbar.register' | translate }}</a>
     </div>
     <div class="header-actions" *ngIf='screenSize <= 768'>
-      <clr-dropdown>
-        <button class="nav-icon" clrDropdownTrigger aria-label="toggle translation menu">
-            <clr-icon shape="gear"></clr-icon>
+      <clr-dropdown *ngIf='!auth.isLoggedIn()'>
+        <button class="nav-icon" clrDropdownTrigger aria-label="toggle login menu">
+            <clr-icon shape="user"></clr-icon>
             <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-          <a href="javascript://" (click)="login()" class="nav-link nav-text">{{ 'AppModule.Navbar.login' | translate }}</a>
-          <a href="javascript://" (click)="register()" class="nav-link nav-text">{{ 'AppModule.Navbar.register' | translate }}</a>
+          <a href="javascript://" (click)="login()" clrDropdownItem>{{ 'AppModule.Navbar.login' | translate }}</a>
+          <a href="javascript://" (click)="register()" clrDropdownItem>{{ 'AppModule.Navbar.register' | translate }}</a>
         </clr-dropdown-menu>
       </clr-dropdown>
     </div>

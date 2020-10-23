@@ -11,7 +11,7 @@ import { User } from 'src/app/models/user';
 export class LoginComponent implements OnInit {
 
   status = false;
-  error = false; //login error, bad password for example
+  error = false; // login error, bad password for example
 
   formModel = {
     user: new User(),
@@ -27,12 +27,23 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logi() {
+  login() {
     this.api.login(this.formModel.user).subscribe(res => {
-
+      if(res == 'error'){
+        this.error = true;
+      }
+      else if(res == 'ok'){
+        this.modal.toggle('login', false);
+      }
     }, err => {
+      this.error = true;
       console.log(err);
     });
+  }
+
+  register(){
+    this.modal.toggle('login', false);
+    this.modal.toggle('register', true);
   }
 
 }

@@ -26,8 +26,18 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
-   // api error handler
-   errorHandler<T>(action: string, result?: T) {
+  isLoggedIn() {
+    if(this.getToken()){
+      return true;
+    }
+    else{
+      return false;
+    }
+    //return this.getToken() != '' ? true : false;
+  }
+
+  // api error handler
+  errorHandler<T>(action: string, result?: T) {
     return (error: any): Observable<T> => {
       console.error(action, error);
       return of(result as T);
@@ -39,7 +49,9 @@ export class AuthService {
     return this.http.post<Response>(this.api + '/login', { user }, httpOptions).pipe(
       map(res => {
         const status = res.status;
-        this.setToken(res.data);
+        if(status == 'ok'){
+          this.setToken(res.data);
+        }
         return status;
       }),
       catchError(this.errorHandler('login'))
