@@ -5,6 +5,15 @@
       "register": "Register",
       "home": "Home",
       "account": "Account"
+    },
+    "Login": {
+      "login1": "Login",
+      "welcome": "Welcome back to",
+      "username": "Username",
+      "password": "Password",
+      "error": "Invalid user name and/or password",
+      "login2": "Login",
+      "register": "Or register"
     }
   }
 }

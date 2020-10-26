@@ -1,26 +1,26 @@
 <clr-modal [(clrModalOpen)]="status">
-  <h3 class="modal-title">Login</h3>
+  <h3 class="modal-title">{{ 'AppModule.Login.login1' | translate }}</h3>
   <div class="modal-body">
     <div class="login-wrapper">
       <form class="login" #Login="ngForm">
         <section class="title">
-          <h3 class="welcome">Welcome back to</h3>
+          <h3 class="welcome">{{ 'AppModule.Login.welcome' | translate }}</h3>
           DosMasters
         </section>
         <div class="login-group">
           <clr-input-container>
-            <label class="clr-sr-only">Username</label>
-            <input required type="text" name="username" clrInput placeholder="Username" [(ngModel)]="formModel.user.username" #username="ngModel"/>
+            <label class="clr-sr-only">{{ 'AppModule.Login.username' | translate }}</label>
+            <input required type="text" name="username" clrInput [placeholder]="'AppModule.Login.username' | translate" [(ngModel)]="formModel.user.username" #username="ngModel"/>
           </clr-input-container>
           <clr-password-container>
-            <label class="clr-sr-only">Password</label>
-            <input required type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="formModel.user.password" #password="ngModel"/>
+            <label class="clr-sr-only">{{ 'AppModule.Login.password' | translate }}</label>
+            <input required type="password" name="password" clrPassword [placeholder]="'AppModule.Login.password' | translate" [(ngModel)]="formModel.user.password" #password="ngModel"/>
           </clr-password-container>
           <div *ngIf='error' class="error active">
-            Invalid user name and/or password
+            {{ 'AppModule.Login.error' | translate }}
           </div>
-          <button type="submit" class="btn btn-primary loginButton" (click)="login()" [disabled]='Login.invalid'>Login</button>
-          <a href="javascript://" class="signup" (click)="register()">Or register</a>
+          <button type="submit" class="btn btn-primary loginButton" (click)="login()" [disabled]='Login.invalid'>{{ 'AppModule.Login.login2' | translate }}</button>
+          <a href="javascript://" class="signup" (click)="register()">{{ 'AppModule.Login.register' | translate }}</a>
         </div>
       </form>
     </div>

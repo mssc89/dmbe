@@ -5,6 +5,15 @@
       "register": "Zarejestruj",
       "home": "Home",
       "account": "Konto"
+    },
+    "Login": {
+      "login1": "Logowanie",
+      "welcome": "Witaj ponownie na",
+      "username": "Nazwa użytkownika",
+      "password": "Hasło",
+      "error": "Błędna nazwa użytkownika i/lub hasło",
+      "login2": "Zaloguj",
+      "register": "Albo zarejestruj"
     }
   }
 }
