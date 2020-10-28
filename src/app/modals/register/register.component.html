@@ -1,4 +1,4 @@
-<clr-wizard #wizard [(clrWizardOpen)]="status" clrWizardSize="md">
+<clr-wizard #wizard [(clrWizardOpen)]="status" [clrWizardClosable]="true" (clrWizardOpenChange)="openChange($event)" clrWizardSize="md">
   <clr-wizard-title>Register</clr-wizard-title>
 
   <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>

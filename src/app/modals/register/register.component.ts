@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalService } from 'src/app/services/modal.service';
+import { Component, ViewChild } from '@angular/core';
 import { ClrWizard } from '@clr/angular';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,9 +8,9 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  status = false; // whether modal is open or not
+  status = true;
 
   @ViewChild('wizard') wizard: ClrWizard;
 
@@ -19,14 +18,16 @@ export class RegisterComponent implements OnInit {
     user: new User(),
   };
 
-  constructor(private modal: ModalService, private api: AuthService) { }
+  constructor(private api: AuthService) { }
 
-  ngOnInit(): void {
-    this.modal.toggler.subscribe(call => {
-      if (call.id == 'register') {
-        this.status = call.status;
-      }
-    });
+  destroyModal(){};
+
+  toggleModal(name: string){};
+
+  openChange(event){
+    if(event == false){
+      this.destroyModal();
+    }
   }
 
   register(): void {

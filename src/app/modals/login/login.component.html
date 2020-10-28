@@ -1,4 +1,4 @@
-<clr-modal [(clrModalOpen)]="status">
+<clr-modal [(clrModalOpen)]="status" [clrModalClosable]="true" [clrModalStaticBackdrop]="false" (clrModalOpenChange)="openChange($event)">
   <h3 class="modal-title">{{ 'AppModule.Login.login1' | translate }}</h3>
   <div class="modal-body">
     <div class="login-wrapper">

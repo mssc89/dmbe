@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalService } from 'src/app/services/modal.service';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/user';
 
@@ -8,23 +7,25 @@ import { User } from 'src/app/models/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  status = false;
+  status = true;
   error = false; // login error, bad password for example
 
   formModel = {
     user: new User(),
   };
 
-  constructor(private modal: ModalService, private api: AuthService) { }
+  constructor( private api: AuthService) { }
 
-  ngOnInit(): void {
-    this.modal.toggler.subscribe(call => {
-      if (call.id == 'login') {
-        this.status = call.status;
-      }
-    });
+  destroyModal(){};
+
+  toggleModal(name: string){};
+
+  openChange(event){
+    if(event == false){
+      this.destroyModal();
+    }
   }
 
   login() {
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.error = true;
       }
       else if(res == 'ok'){
-        this.modal.toggle('login', false);
+        this.destroyModal();
       }
     }, err => {
       this.error = true;
@@ -42,8 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   register(){
-    this.modal.toggle('login', false);
-    this.modal.toggle('register', true);
+    this.toggleModal('register');
+    this.destroyModal();
   }
-
 }
