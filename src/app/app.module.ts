@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './modals/login/login.component';
 import { RegisterComponent } from './modals/register/register.component';
+import { LoginModalComponent } from './alerts/login/login.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -19,6 +20,7 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ export function tokenGetter() {
     SharedModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter
+        tokenGetter,
+        allowedDomains: ["localhost"],
       }
     })
   ],
