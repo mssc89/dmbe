@@ -1,26 +1,26 @@
 <clr-modal [(clrModalOpen)]="status" [clrModalClosable]="true" [clrModalStaticBackdrop]="false" (clrModalOpenChange)="openChange($event)">
-  <h3 class="modal-title">{{ 'AppModule.Login.login1' | translate }}</h3>
+  <h3 class="modal-title">{{ 'AppModule.LoginModal.login1' | translate }}</h3>
   <div class="modal-body">
     <div class="login-wrapper">
       <form class="login" #Login="ngForm">
         <section class="title">
-          <h3 class="welcome">{{ 'AppModule.Login.welcome' | translate }}</h3>
+          <h3 class="welcome">{{ 'AppModule.LoginModal.welcome' | translate }}</h3>
           DosMasters
         </section>
         <div class="login-group">
           <clr-input-container>
-            <label class="clr-sr-only">{{ 'AppModule.Login.username' | translate }}</label>
-            <input required type="text" name="username" clrInput [placeholder]="'AppModule.Login.username' | translate" [(ngModel)]="formModel.user.username" #username="ngModel"/>
+            <label class="clr-sr-only">{{ 'AppModule.LoginModal.username' | translate }}</label>
+            <input required type="text" name="username" clrInput [placeholder]="'AppModule.LoginModal.username' | translate" [(ngModel)]="formModel.user.username" #username="ngModel"/>
           </clr-input-container>
           <clr-password-container>
-            <label class="clr-sr-only">{{ 'AppModule.Login.password' | translate }}</label>
-            <input required type="password" name="password" clrPassword [placeholder]="'AppModule.Login.password' | translate" [(ngModel)]="formModel.user.password" #password="ngModel"/>
+            <label class="clr-sr-only">{{ 'AppModule.LoginModal.password' | translate }}</label>
+            <input required type="password" name="password" clrPassword [placeholder]="'AppModule.LoginModal.password' | translate" [(ngModel)]="formModel.user.password" #password="ngModel"/>
           </clr-password-container>
           <div *ngIf='error' class="error active">
-            {{ 'AppModule.Login.error' | translate }}
+            {{ 'AppModule.LoginModal.error' | translate }}
           </div>
-          <button type="submit" class="btn btn-primary loginButton" (click)="login()" [disabled]='Login.invalid'>{{ 'AppModule.Login.login2' | translate }}</button>
-          <a href="javascript://" class="signup" (click)="register()">{{ 'AppModule.Login.register' | translate }}</a>
+          <button type="submit" class="btn btn-primary loginButton" (click)="login()" [disabled]='Login.invalid'>{{ 'AppModule.LoginModal.login2' | translate }}</button>
+          <a href="javascript://" class="signup" (click)="register()">{{ 'AppModule.LoginModal.register' | translate }}</a>
         </div>
       </form>
     </div>

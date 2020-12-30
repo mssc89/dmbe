@@ -1,6 +1,6 @@
 import { Injectable, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
-import { LoginComponent } from '../modals/login/login.component';
-import { RegisterComponent } from '../modals/register/register.component';
+import { LoginModalComponent } from '../modals/login/login.component';
+import { RegisterModalComponent } from '../modals/register/register.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class ModalService {
 
   // map of all available modals
   modalsMap = {
-    login: LoginComponent,
-    register: RegisterComponent
+    login: LoginModalComponent,
+    register: RegisterModalComponent
   };
 
   constructor(private factoryResolver: ComponentFactoryResolver) { }

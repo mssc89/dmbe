@@ -7,9 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './modals/login/login.component';
-import { RegisterComponent } from './modals/register/register.component';
-import { LoginModalComponent } from './alerts/login/login.component';
+import { LoginModalComponent } from './modals/login/login.component';
+import { RegisterModalComponent } from './modals/register/register.component';
+import { LoginAlertComponent } from './alerts/login/login.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -18,9 +18,9 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    RegisterModalComponent,
+    LoginAlertComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
       "home": "Home",
       "account": "Account"
     },
-    "Login": {
+    "LoginModal": {
       "login1": "Login",
       "welcome": "Welcome back to",
       "username": "Username",

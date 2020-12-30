@@ -7,7 +7,7 @@ import { User } from 'src/app/models/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginModalComponent {
 
   status = true;
   error = false; // login error, bad password for example
