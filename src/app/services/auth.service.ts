@@ -5,6 +5,8 @@ import { map, catchError, tap } from 'rxjs/operators';
 import { Response } from '../models/response';
 import { User } from '../models/user';
 
+import { AlertService } from './alert.service';
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
 };
@@ -16,7 +18,7 @@ export class AuthService {
 
   api = 'http://localhost:3000/api/auth';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private alert: AlertService) { }
 
   getToken(): string {
     return localStorage.getItem('token');
@@ -51,6 +53,9 @@ export class AuthService {
         const status = res.status;
         if(status == 'ok'){
           this.setToken(res.data);
+
+          //show alert
+          this.alert.toggleAlert('login')
         }
         return status;
       }),
