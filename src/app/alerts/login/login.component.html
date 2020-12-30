@@ -1,4 +1,4 @@
-<div class="alert alert-app-level alert-info" role="alert">
+<div *ngIf="status" class="alert alert-app-level alert-info" role="alert">
     <div class="alert-items">
         <div class="alert-item static">
             <div class="alert-icon-wrapper">
@@ -6,9 +6,6 @@
             </div>
             <div class="alert-text">
                 Login successful
-            </div>
-            <div class="alert-actions">
-                <button class="btn alert-action">Install Update</button>
             </div>
         </div>
     </div>

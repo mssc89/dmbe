@@ -1,9 +1,7 @@
-<template #modal></template>
+<ng-container #modal></ng-container>
 
 <clr-main-container>
-  <!--<div class="alert alert-app-level">
-      ...
-  </div>-->
+  <ng-container #alert></ng-container>
   <clr-header>
     <div class="branding" *ngIf='screenSize > 600'>
       <a routerLink="/" href="javascript://">
