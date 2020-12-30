@@ -46,7 +46,7 @@ export class AuthService {
 
   // login function - get jwt token from backend
   login(user: User): Observable<string> {
-    return this.http.post<Response>(this.api + '/login', { user }, httpOptions).pipe(
+    return this.http.post<Response>(this.api + '/login', { username: user.username, password: user.password }, httpOptions).pipe(
       map(res => {
         const status = res.status;
         if(status == 'ok'){
